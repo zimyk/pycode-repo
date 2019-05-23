@@ -1,7 +1,6 @@
-
 # -*- coding: utf-8 -*-
 """
-Created on Thu May 23 10:58:01 2019
+Created on Thu May 23 10:24:47 2019
 
 @author: Zigma
 """
@@ -28,26 +27,19 @@ class User():
         print("\nHey, " + self.first_name.title() + "!")
 
 
-class Privileges():
-    """Displays the priveleges of an Admin"""
-    def __init__(self, a_privileges):
-        """ Initializes Privileges attribute"""
-        self.a_privileges = []
-
-    def show_privileges(self, a_privileges):
-        """ Lists the privileges of the Admin"""
-        print("The Admin: ")
-        for a_privilege in a_privileges:
-            print("- " + a_privilege)
-
-
 class Admin(User):
     """ Represents previlees specific to the Admin"""
     def __init__(self, first_name, last_name, address, state, country):
         """Initializes attributes of the parent class admin"""
 
-        super(a_privileges).__init__(first_name, last_name, address, state, country)
-        self.privileges = Privileges()
+        super().__init__(first_name, last_name, address, state, country)
+        self.priveleges = []
+
+    def show_privileges(self, priveleges):
+        """ Displays the privileges of the Admin"""
+        print("The Admin: ")
+        for privelege in priveleges:
+            print("- " + privelege)
 
 
 admin_privileges = [
@@ -64,4 +56,10 @@ admin = Admin(
             'Lagos',
             'Nigeria',
             )
-admin.privileges.show_privileges(admin_privileges)
+admin.show_privileges(admin_privileges)
+
+
+
+
+
+
